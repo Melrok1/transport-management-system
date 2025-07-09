@@ -1,16 +1,11 @@
 <template>
   <div class="home">
-
+    <CreateOrder />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 
-export default defineComponent({
-  name: 'HomeView',
-  components: {
-    
-  },
-});
+import CreateOrder from '@/components/CreateOrder.vue'
+
 </script>
