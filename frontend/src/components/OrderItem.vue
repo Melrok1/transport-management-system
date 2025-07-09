@@ -1,6 +1,29 @@
 <template>
   <li class="order-item">
-    {{ order.order_number }} – {{ order.customer_name }} – {{ order.date }}
+		<div class="item-wrapper">
+			<div>
+				<span class="label">číslo objednávky:</span>
+				<span>{{ order.order_number }}</span>
+			</div>
+			<div>
+				<span class="label">meno zákazníka:</span>
+				<span>{{ order.customer_name }}</span>
+			</div>
+			<div>
+				<span class="label">dátum:</span>
+				<span>{{ order.date }}</span>
+			</div>
+		</div>
+		<div v-if="order.waypoints.length">
+			<h5>Body trasy (Zastávky)</h5>
+			<ul>
+				<li v-for="waypoint in order.waypoints" :key="waypoint.id" class="waypoint-item">
+					<span>
+						{{ waypoint.location }} ({{ waypoint.waypoint_type }})	
+					</span>
+				</li>
+			</ul>
+		</div>
   </li>
 </template>
 
@@ -13,6 +36,12 @@ interface Order {
   order_number: string
   customer_name: string
   date: string
+	waypoints: Array<{
+		id: number
+		order: number
+		location: string
+		waypoint_type: string
+	}>
 }
 
 const props = defineProps<{
@@ -33,6 +62,27 @@ const props = defineProps<{
 	&:hover {
 		background-color: #f9f9f9;
 		cursor: pointer;
+	}
+}
+
+.item-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.label {
+	font-weight: bold;
+	margin-right: 1rem;
+}
+
+.waypoint-item {
+	list-style-type: none;
+	padding: 5px 0;
+
+	span::before {
+		content: '• ';
+		color: #007bff;
 	}
 }
 

@@ -29,7 +29,6 @@ const props = defineProps<{
 
 	label {
 		margin-bottom: 0.5rem;
-		font-weight: bold;
 	}
 
 	input[type="date"] {

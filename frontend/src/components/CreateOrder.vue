@@ -11,7 +11,7 @@
         <input v-model="customer_name" required />
       </div>
       <div>
-        <DateInput v-model="date" label="Select Date" />
+        <DateInput v-model="date" label="Dátum:" />
       </div>
       <button type="submit">Create</button>
     </form>

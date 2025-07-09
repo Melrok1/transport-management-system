@@ -23,6 +23,12 @@ interface Order {
   order_number: string
   customer_name: string
   date: string
+	waypoints: Array<{
+		id: number
+		order: number
+		location: string
+		waypoint_type: string
+	}>
 }
 
 const orders = ref<Order[]>([])
