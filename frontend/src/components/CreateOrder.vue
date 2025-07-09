@@ -24,7 +24,9 @@
 import DateInput from './inputs/DatePicker.vue'
 import { ref } from 'vue'
 import { createOrder } from '../services/orderService'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const order_number = ref('')
 const customer_name = ref('')
 const date = ref('')
@@ -32,20 +34,27 @@ const message = ref('')
 
 const submitOrder = async () => {
   try {
-    await createOrder({
+    const response = await createOrder({
       order_number: order_number.value,
       customer_name: customer_name.value,
       date: date.value
     })
-    message.value = 'Order created successfully!'
+
+    const createdOrderId = response.data.id
+
+    message.value = 'Objednávka bola úspešne vytvorená!'
+
+    router.push(`/orders/${createdOrderId}`)
+
     order_number.value = ''
     customer_name.value = ''
     date.value = ''
   } catch (error) {
     console.error(error)
-    message.value = 'Error creating order.'
+    message.value = 'Chyba pri vytváraní objednávky.'
   }
 }
+
 </script>
 
 <style scoped lang="scss">
