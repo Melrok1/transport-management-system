@@ -1,13 +1,13 @@
 <template>
   <div class="create-order--container">
-    <h2>Create Order</h2>
+    <h2>Vytvoriť objednávku</h2>
     <form @submit.prevent="submitOrder">
       <div>
-        <label>Order Number:</label>
+        <label>Číslo objednávky:</label>
         <input v-model="order_number" required />
       </div>
       <div>
-        <label>Customer Name:</label>
+        <label>Meno zákazníka:</label>
         <input v-model="customer_name" required />
       </div>
       <div>
