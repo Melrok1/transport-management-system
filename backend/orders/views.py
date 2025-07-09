@@ -12,6 +12,10 @@ class WaypointCreateView(generics.CreateAPIView):
     queryset = Waypoint.objects.all()
     serializer_class = WaypointSerializer
     
+class OrderDetailView(generics.RetrieveAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+        
 class OrderListCreateView(generics.ListCreateAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
