@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="create-order--container">
     <h2>Create Order</h2>
     <form @submit.prevent="submitOrder">
       <div>
@@ -47,3 +47,60 @@ const submitOrder = async () => {
   }
 }
 </script>
+
+<style scoped lang="scss">
+
+.create-order--container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    div {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+    }
+
+    button {
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    color: green;
+    margin-top: 15px;
+  }
+}
+
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="date-picker">
     <label>{{ label }}</label>
 		<input
 			type="date"
@@ -19,3 +19,25 @@ const props = defineProps<{
 }>()
 
 </script>
+
+<style scoped lang="scss">
+
+.date-picker {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+
+	label {
+		margin-bottom: 0.5rem;
+		font-weight: bold;
+	}
+
+	input[type="date"] {
+		padding: 0.5rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		font-size: 1rem;
+	}
+}
+
+</style>
