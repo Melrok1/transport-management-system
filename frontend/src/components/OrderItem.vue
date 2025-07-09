@@ -15,7 +15,7 @@
 			</div>
 		</div>
 		<div v-if="order.waypoints.length">
-			<h5>Body trasy (Zastávky)</h5>
+			<h4>Body trasy (Zastávky)</h4>
 			<ul>
 				<li v-for="waypoint in order.waypoints" :key="waypoint.id" class="waypoint-item">
 					<span>
