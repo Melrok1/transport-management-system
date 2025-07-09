@@ -13,7 +13,6 @@
       <div>
         <DateInput v-model="date" label="Dátum:" />
       </div>
-       <button type="button">Pridaj zastávku</button>
       <button type="submit">Vytvor objednávku</button>
     </form>
     <p v-if="message">{{ message }}</p>
@@ -93,15 +92,6 @@ const submitOrder = async () => {
 
       &:hover {
         background-color: #218838;
-      }
-    }
-
-    button[type="button"] {
-      background-color: #f37907;
-      margin: 10px 0;
-
-      &:hover {
-        background-color: #db6f0a;
       }
     }
   }

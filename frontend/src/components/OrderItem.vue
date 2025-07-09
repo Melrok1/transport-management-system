@@ -1,5 +1,5 @@
 <template>
-  <li class="order-item">
+  <li @click="goToDetail" class="order-item">
 		<div class="item-wrapper">
 			<div>
 				<span class="label">číslo objednávky:</span>
@@ -30,6 +30,9 @@
 <script setup lang="ts">
 
 import { defineProps } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 interface Order {
   id: number
@@ -47,6 +50,10 @@ interface Order {
 const props = defineProps<{
   order: Order
 }>()
+
+const goToDetail = () => {
+  router.push(`/orders/${props.order.id}`)
+}
 
 </script>
 

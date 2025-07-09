@@ -17,3 +17,8 @@ export const createOrder = (data: {
 }) => {
   return api.post('orders/', data)
 }
+
+// GET order by ID
+export const getOrderById = (id: number) => {
+  return api.get(`orders/${id}/`)
+} 
