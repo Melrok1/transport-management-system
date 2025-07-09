@@ -4,7 +4,7 @@ from .models import Order, Waypoint
 class WaypointSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Waypoint
-		fields = ['id', 'location', 'waypoint_type']
+		fields = ['id', 'order', 'location', 'waypoint_type']
 
 class OrderSerializer(serializers.ModelSerializer):
 	waypoints = WaypointSerializer(many=True, read_only=True)
